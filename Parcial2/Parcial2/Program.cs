@@ -1,14 +1,17 @@
-﻿public class Program
+﻿using System;
+
+public class Program
 {
     private static void Main(string[] args)
     {
         // Parcial 2, (Adivina el número)
 
         //Inicialización código
-
+        Random random = new Random();
         bool Jugar = true;
 
         while (Jugar) {
+
             Console.Clear();
             Console.WriteLine("Bienvenido al juego 'Adivina el número'! ");
             Console.WriteLine("Ingrese el número de jugadores entre 2 y 4");
@@ -39,7 +42,7 @@
                     break;
             }
 
-            int NumAleatorio;
+            int NumAleatorio = random.Next(0, NumJugadores + 1);
             int JugadorActual = 1;
             bool Ganador = false;
 
@@ -53,9 +56,31 @@
                 {
                     Console.WriteLine($"Por favor, introduce un número válido entre 0 y {NumJugadores}:");
                 }
+
+                if (adivina > NumAleatorio)
+                {
+                    Console.WriteLine("MENOR");
+                }
+                else if (adivina < NumJugadores)
+                {
+                    Console.WriteLine("MAYOR");
+                }
+                else
+                {
+                    Console.WriteLine("¡HAS GANADO!");
+                    Ganador = true;
+                }
+
+                JugadorActual++;
+                if (JugadorActual > NumJugadores) JugadorActual = 1;
             }
 
+            Console.WriteLine("\n¿Desean jugar de nuevo? (s/n)");
+            string respuesta = Console.ReadLine();
+            Console.Clear();
+        }
 
+        Console.WriteLine("Gracias por jugar. ¡Hasta la próxima!");
 
 
     }
@@ -65,7 +90,7 @@
 
 
 
-    }
+    
 
 
 
