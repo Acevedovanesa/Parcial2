@@ -20,22 +20,40 @@
             }
 
             int min, max;
-            switch (NumJugadores) 
+
+            switch (NumJugadores)
             {
                 case 2:
                     min = 0; max = 50;
                     break;
 
-                    case 3:
+                case 3:
                     min = 0; max = 100;
                     break;
 
-                    case 4:
+                case 4:
                     min = 0; max = 200;
                     break;
                 default:
                     Console.WriteLine($"Numero de jugadores inválidos");
                     break;
+            }
+
+            int NumAleatorio;
+            int JugadorActual = 1;
+            bool Ganador = false;
+
+            while (Ganador)
+            {
+                Console.WriteLine($"\nTurno del Jugador {JugadorActual}:");
+                Console.Write("Introduce el número: ");
+                int adivina;
+
+                while (!int.TryParse(Console.ReadLine(), out adivina) || adivina < 0 || adivina > NumJugadores)
+                {
+                    Console.WriteLine($"Por favor, introduce un número válido entre 0 y {NumJugadores}:");
+                }
+            }
 
 
 
@@ -43,6 +61,11 @@
     }
 }
 
+
+
+
+
+    }
 
 
 
