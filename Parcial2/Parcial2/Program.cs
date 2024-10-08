@@ -6,50 +6,50 @@
 
         //Inicialización código
 
-        {
-            do
+        bool Jugar = true;
+
+        while (Jugar) {
+            Console.Clear();
+            Console.WriteLine("Bienvenido al juego 'Adivina el número'! ");
+            Console.WriteLine("Ingrese el número de jugadores entre 2 y 4");
+            int NumJugadores;
+
+            while (int.TryParse(Console.ReadLine(), out NumJugadores) || NumJugadores <2 || NumJugadores >4);
             {
-                Console.Clear();
-                Console.WriteLine("¡Bienvenido al juego 'Adivina el número'!");
-
-                int numeroDeJugadores;
-
-                do
-                {
-                    Console.Write("Introduce el número de jugadores (2-4): ");
-                } while (!int.TryParse(Console.ReadLine(), out numeroDeJugadores) || numeroDeJugadores < 2 || numeroDeJugadores > 4);
-
-                int min, max;
-                switch (numeroDeJugadores)
-                {
-                    case 2:
-                        min = 0; max = 50;
-                        break;
-
-                    case 3:
-                        min = 0; max = 100;
-                        break;
-
-                    case 4:
-                        min = 0; max = 200;
-                        break;
-                    default:
-                        Console.WriteLine($"Número de jugadores inválido");
-                        break;
-
-
-
-
-                }
-
-
+                Console.WriteLine("Por favor ingrese un número válido de jugadores (2-4): ");
             }
 
+            int min, max;
+            switch (NumJugadores) 
+            {
+                case 2:
+                    min = 0; max = 50;
+                    break;
+
+                    case 3:
+                    min = 0; max = 100;
+                    break;
+
+                    case 4:
+                    min = 0; max = 200;
+                    break;
+                default:
+                    Console.WriteLine($"Numero de jugadores inválidos");
+                    break;
 
 
-    }
+
+
     }
 }
+
+
+
+
+
+                
+
+            
 
 
 
