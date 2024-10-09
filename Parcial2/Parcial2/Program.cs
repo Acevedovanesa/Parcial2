@@ -46,7 +46,7 @@ public class Program
             int JugadorActual = 1;
             bool Ganador = false;
 
-            while (Ganador)
+            while (!Ganador)
             {
                 Console.WriteLine($"\nTurno del Jugador {JugadorActual}:");
                 Console.Write("Introduce el número: ");
